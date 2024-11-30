@@ -29,6 +29,9 @@ class SunflowerCatcher(AdbOCR):
             logger.warning("The user name is not found.")
             return None
 
+        # return main menu
+        await self.go_back()
+
         return name[0].text
 
     async def get_screen_box(self, area: BoundingBox) -> ndarray | None:
