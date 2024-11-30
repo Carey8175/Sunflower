@@ -32,15 +32,29 @@ class SpecificArea:
 
     # PLAYERS = BoundingBox(850, 50, 150, 440)
     PLAYERS: list[BoundingBox] = [
-        BoundingBox(850, 50, 150, 60),       # player 1
-        BoundingBox(850, 103, 150, 60),       # player 2
-        BoundingBox(850, 156, 150, 60),       # player 3
-        BoundingBox(850, 209, 150, 60),       # player 4
-        BoundingBox(850, 262, 150, 60),       # player 5
-        BoundingBox(850, 315, 150, 60),       # player 6
-        BoundingBox(850, 368, 150, 60),       # player 7
-        BoundingBox(850, 421, 150, 60),       # player 8
+        BoundingBox(850, 55 + i*53, 120, 55) for i in range(8)
     ]
+
+    AUGMENTS: list[BoundingBox] = [
+        BoundingBox(210, 280, 70, 25),       # augment 1 button
+        BoundingBox(470, 280, 70, 25),       # augment 2 button
+        BoundingBox(740, 280, 70, 25),       # augment 3 button
+    ]
+
+    BOARD: list[list[BoundingBox]] = [
+        [BoundingBox(290 + i*65, 265, 50, 25) for i in range(7)],
+        [BoundingBox(310 + i*65, 310, 50, 25) for i in range(7)],
+        [BoundingBox(270 + i*70, 355, 50, 25) for i in range(7)],
+        [BoundingBox(295 + i*77, 405, 50, 25) for i in range(7)],
+    ]
+
+    CANDIDATES: list[BoundingBox] = [
+        BoundingBox(205 + i * 72, 490, 40, 40) for i in range(9)
+    ]
+
+    CHESS_PRICE: BoundingBox = BoundingBox(840, 100, 50, 20)
+    CHESS_NAME: BoundingBox = BoundingBox(830, 75, 120, 25)
+    CIRCLE_PLACE = BoundingBox(510, 425, 10, 10)
 
 
 class SpecificButton:
@@ -63,6 +77,13 @@ class SpecificButton:
     BUY_XP = BoundingBox(80, 600, 130, 50)       # buy xp button
     ROLL = BoundingBox(80, 655, 130, 50)       # roll button
     CHOOSE_HP = BoundingBox(950, 480, 50, 50)       # choose hp button
+    CHESS_SELL = BoundingBox(830, 480, 120, 30)       # chess sell button
+
+    ROLL_AUGMENTS: list[BoundingBox] = [
+        BoundingBox(207, 468, 75, 30),       # roll augment 1 button
+        BoundingBox(475, 468, 75, 30),       # roll augment 2 button
+        BoundingBox(740, 468, 75, 30),       # roll augment 3 button
+    ]
 
     STORE_HERO: list[BoundingBox] = [
         BoundingBox(220, 680, 80, 40),       # store hero 1 button
@@ -86,12 +107,12 @@ class SpecificButton:
         BoundingBox(140, 303, 60, 60),       # equipment 10 button
     ]
 
-    EVOLVE = BoundingBox(700, 580, 150, 100)
-    # EVOLVE_ROLL = BoundingBox(70, 600, 60, 30)
+    EVOLVE = BoundingBox(780, 600, 110, 50)
+    EVOLVE_ROLL = BoundingBox(780, 655, 110, 50)
 
-    EXIT_NOW = BoundingBox(430, 600, 170, 70)  # exit now button, down right corner
+    EXIT_NOW = BoundingBox(320, 610, 150, 50)  # exit now button, down right corner
 
-    # result menu
+    # result menu -------------------------------------------------------------
     NEXT_STEP = BoundingBox(810, 660, 120, 50)   # next step button, down right corner
 
 
@@ -101,3 +122,4 @@ class BasicGameInfo:
     level: int
     period: tuple
     store: list[str]
+
