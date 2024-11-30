@@ -84,7 +84,7 @@ class SunflowerUtils:
                 # plot the circle
                 cv2.circle(img_click, (x, y), 5, (0, 255, 0), -1)
                 # plot the text
-                cv2.putText(img_click, f'({x}, {y})', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+                cv2.putText(img_click, f'({x}, {y})', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
 
                 cv2.imshow('Image Window', img_click)
 
