@@ -153,10 +153,13 @@ class SunflowerCatcher(AdbOCR):
             await asyncio.sleep(0.5)
 
             ocr_results = await self.get_screen_text(BoundingBox(0, 0, 514, 360))
-            orc_results_text = {ocr_result.text for ocr_result in ocr_results}
+            # save the real equipment results
+            equipment_results = [r for r in ocr_results if r.text in SunflowerUtils.get_equipments()]
 
-            if equipment := SunflowerUtils.is_equipment(orc_results_text):
-                equipments.append(equipment)
+            if equipment_results:
+                # the max y coordinate of the equipment is the real one
+                top_equipment = min(equipment_results, key=lambda x: x.y)
+                equipments.append(top_equipment.text)
 
             else:
                 break
