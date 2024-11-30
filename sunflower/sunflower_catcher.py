@@ -20,11 +20,11 @@ class SunflowerCatcher(AdbOCR):
             return None
 
         # click profile button
-        await self.click(*SpecificButton.profile_button.get_middle_coordinate())
+        await self.click(*SpecificButton.PROFILE.get_middle_coordinate())
         await asyncio.sleep(1)
 
         # ocr the name
-        name = await self.get_screen_text(SpecificArea.NAME_AREA)
+        name = await self.get_screen_text(SpecificArea.NAME)
         if not name:
             logger.warning("The user name is not found.")
             return None
