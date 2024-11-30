@@ -285,8 +285,8 @@ class AdbOCR:
 
         for res in result:
             ocr_results.append(OcrResult(
-                x=res[0][0][0],
-                y=res[0][0][1],
+                x=res[0][0][0] if not detect_area else detect_area.x + res[0][0][0],
+                y=res[0][0][1] if not detect_area else detect_area.y + res[0][0][1],
                 width=res[0][2][0] - res[0][0][0],
                 height=res[0][2][1] - res[0][0][1],
                 text=res[1][0]
