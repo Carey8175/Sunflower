@@ -152,19 +152,34 @@ class SunflowerCatcher(AdbOCR):
             await self.click(*SpecificButton.EQUIPMENT[i].get_middle_coordinate())
             await asyncio.sleep(0.5)
 
-            ocr_results = await self.get_screen_text(BoundingBox(0, 0, 514, 360))
-            # save the real equipment results
-            equipment_results = [r for r in ocr_results if r.text in SunflowerUtils.get_equipments()]
-
-            if equipment_results:
-                # the max y coordinate of the equipment is the real one
-                top_equipment = min(equipment_results, key=lambda x: x.y)
-                equipments.append(top_equipment.text)
+            if equipment := await self.get_equipment_name(game_state):
+                equipments.append(equipment)
 
             else:
                 break
 
         return equipments if equipments else None
+
+    async def get_equipment_name(self, game_state: GameState) -> str | None:
+        """
+        Get the equipment from the device by ocr.
+        :return:
+        """
+        if game_state != GameState.IN_GAME:
+            logger.warning("The game state is not in game. Cannot get equipment.")
+            return None
+
+        ocr_results = await self.get_screen_text(BoundingBox(0, 0, 514, 360))
+        # save the real equipment results
+        equipment_results = [r for r in ocr_results if r.text in SunflowerUtils.get_equipments()]
+
+        if equipment_results:
+            # the max y coordinate of the equipment is the real one
+            top_equipment = min(equipment_results, key=lambda x: x.y)
+            return top_equipment.text
+
+        else:
+            return None
 
     async def get_store(self, game_state: GameState) -> list[str] | None:
         """
