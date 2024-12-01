@@ -5,7 +5,7 @@ from sunflower.datatype import GameState
 
 async def main():
     sc = SunflowerCatcher()
-    await sc.load(16416)
+    await sc.load(5555)
     # screen = await sc.get_screen_box(SpecificArea.NAME_AREA)
     game_info = await sc.get_basic_game_info(game_state=GameState.IN_GAME)
 
