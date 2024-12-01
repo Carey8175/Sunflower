@@ -1,0 +1,578 @@
+{
+  "version": "14.4.23",
+  "season": "S14",
+  "setId": "13",
+  "time": "2024-11-29 23:52:08",
+  "data": {
+    "200070": {
+      "goop_id": "200070",
+      "title": "超高速",
+      "desc": "获得10%攻击速度。施放时，获得15%可叠加的攻击速度，持续至战斗环节结束。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻速"
+    },
+    "200080": {
+      "goop_id": "200080",
+      "title": "狂战之怒",
+      "desc": "获得20法术强度和20%攻击力。生命值低于50%时，这个加成变为3倍。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200090": {
+      "goop_id": "200090",
+      "title": "力量训练",
+      "desc": "获得20%攻击力。每进行3次攻击，己方弈子们就会获得4%攻击力。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200100": {
+      "goop_id": "200100",
+      "title": "防御型护盾",
+      "desc": "战斗开始和每8秒：为自身以及生命值最低的2名友军提供相当于15%最大生命值的护盾值，持续5秒。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200110": {
+      "goop_id": "200110",
+      "title": "即兴发挥",
+      "desc": "你每激活一个羁绊，就会获得4.5|1%伤害增幅。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "增伤"
+    },
+    "200120": {
+      "goop_id": "200120",
+      "title": "双刀流",
+      "desc": "获得2件符合该英雄定位的成装。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200130": {
+      "goop_id": "200130",
+      "title": "壁垒",
+      "desc": "获得40护甲和40魔法抗性。生命值高于50%时，这个加成变为3倍。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200150": {
+      "goop_id": "200150",
+      "title": "终结者",
+      "desc": "该弈子的普攻和技能会处决生命值为15%及以下的敌方英雄。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200160": {
+      "goop_id": "200160",
+      "title": "坚不可破",
+      "desc": "获得12%最大生命值。每3秒，获得另外的12%(至多至5次)。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200170": {
+      "goop_id": "200170",
+      "title": "荆棘满途",
+      "desc": "获得60护甲与60魔抗。在受到伤害时，对邻格敌人造成相当于20%已格挡伤害的魔法伤害。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200180": {
+      "goop_id": "200180",
+      "title": "恃强凌弱",
+      "desc": "获得18%伤害增幅，攻击星级较低的弈子时，这个加成会提升至36%。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "增伤"
+    },
+    "200200": {
+      "goop_id": "200200",
+      "title": "护甲山崩",
+      "desc": "获得相当于25%护甲的攻击力。获得50护甲。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200210": {
+      "goop_id": "200210",
+      "title": "石头皮肤",
+      "desc": "战斗开始时：获得225护甲与魔抗。每秒，使这个加成降低10。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200220": {
+      "goop_id": "200220",
+      "title": "斥力发生器",
+      "desc": "获得35%攻击速度。在施放技能时，如果与其目标相隔的距离在2格内，则将目标击退。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200230": {
+      "goop_id": "200230",
+      "title": "星界韵律",
+      "desc": "不再获得法力值，作为替代，每4秒施放其技能。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法力值"
+    },
+    "200240": {
+      "goop_id": "200240",
+      "title": "地下拳王",
+      "desc": "获得15%攻击力。施放技能后的下一次攻击获得35%暴击几率，并造成90%真实伤害。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200270": {
+      "goop_id": "200270",
+      "title": "魔法训练",
+      "desc": "获得20法术强度。在施放技能时，每消耗20法力值，己方弈子们就会获得2法术强度。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200280": {
+      "goop_id": "200280",
+      "title": "鹰眼",
+      "desc": "获得+1距离。该英雄每静止不动2秒，获得6%攻击力。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200290": {
+      "goop_id": "200290",
+      "title": "奥术浩荡",
+      "desc": "获得相当于25%魔抗的法术强度。获得50魔抗。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200300": {
+      "goop_id": "200300",
+      "title": "隐形",
+      "desc": "每过6秒，进入隐形状态1秒。下一次攻击拥有100%暴击几率。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "暴击"
+    },
+    "200310": {
+      "goop_id": "200310",
+      "title": "友谊之力",
+      "desc": "获得伤害增幅，数额为1%x你场上的总星级。3星英雄则转而提供8%伤害增幅。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200320": {
+      "goop_id": "200320",
+      "title": "泰坦打击",
+      "desc": "攻击对目标和邻格敌人们造成30%攻击力的额外伤害。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200330": {
+      "goop_id": "200330",
+      "title": "最后机会",
+      "desc": "在第一次阵亡时，以满生命值复活、获得50%攻击速度和20%全能吸血，但每秒损失12.5|1%生命值。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200340": {
+      "goop_id": "200340",
+      "title": "慢炖",
+      "desc": "每1秒在一个半径1格的区域内造成魔法伤害，数额相当于其4%最大生命值。半径每6秒提升一次。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200360": {
+      "goop_id": "200360",
+      "title": "法师护甲",
+      "desc": "获得相当于40%法术强度的护甲与魔抗。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200370": {
+      "goop_id": "200370",
+      "title": "恕瑞玛的传承",
+      "desc": "在战斗10秒后，飞升，从而获得40%最大生命值和60%攻击速度",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻速"
+    },
+    "200380": {
+      "goop_id": "200380",
+      "title": "千刀斩",
+      "desc": "攻击造成30额外真实伤害，并且目标每次受到这个效果的伤害时，这个真实伤害的数额就会提升15。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200390": {
+      "goop_id": "200390",
+      "title": "重量级打击手",
+      "desc": "攻击造成额外物理伤害，相当于这个弈子的20%最大生命值。(冷却时间：3秒)",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200400": {
+      "goop_id": "200400",
+      "title": "分享你的能量",
+      "desc": "战斗开始时：为邻格弈子们提供这个弈子的12%攻击力、法术强度、生命值、护甲与魔抗。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200430": {
+      "goop_id": "200430",
+      "title": "名片",
+      "desc": "获得一个纹章，且这个纹章与这个弈子的一个非唯一羁绊相匹配。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200440": {
+      "goop_id": "200440",
+      "title": "势不可挡",
+      "desc": "参与击杀后，冲锋至下一个目标并将该目标晕眩1.5|1秒，然后治疗自身10%最大生命值。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200460": {
+      "goop_id": "200460",
+      "title": "真的会蟹",
+      "desc": "在阵亡时，召唤一个螃蟹，它拥有这个弈子的111%最大生命值、护甲与魔抗。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200480": {
+      "goop_id": "200480",
+      "title": "史莱姆时间",
+      "desc": "每过2秒，对半径1格内的敌人造成100%()魔法伤害并为该弈子回复相当于100%造成伤害的生命值。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200490": {
+      "goop_id": "200490",
+      "title": "魔法专家",
+      "desc": "这个弈子获得40%额外法术强度(来自所有来源)。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200500": {
+      "goop_id": "200500",
+      "title": "翻盘故事",
+      "desc": "你在这局游戏每失去10生命值，就会获得5%伤害增幅。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "增伤"
+    },
+    "200510": {
+      "goop_id": "200510",
+      "title": "防御专家",
+      "desc": "这个弈子获得50%额外护甲与魔抗(来自所有来源)。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200520": {
+      "goop_id": "200520",
+      "title": "物理专家",
+      "desc": "这个弈子获得55%额外攻击力(来自所有来源)。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200530": {
+      "goop_id": "200530",
+      "title": "冰霜触摸",
+      "desc": "技能对敌人造成20%冰冷效果(降低攻击速度)，持续4秒。受到冰冷效果的敌人阵亡时，会对距离最近的敌人造成1秒晕眩。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200550": {
+      "goop_id": "200550",
+      "title": "微缩化",
+      "desc": "转变成一件装备，该装备可提供其75%攻击力、法术强度、护甲与魔抗。已携带的装备会弹出来。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200560": {
+      "goop_id": "200560",
+      "title": "小我多多",
+      "desc": "获得3个迷你弈子，每3次攻击可造成相当于30%攻击力的伤害。它们的攻击会使护甲降低5。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200570": {
+      "goop_id": "200570",
+      "title": "巨人体型",
+      "desc": "获得1000生命值并且体型获得极大提升。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200580": {
+      "goop_id": "200580",
+      "title": "根深蒂固",
+      "desc": "获得700生命值、25护甲、和25魔抗。该弈子无法移动或被晕眩，并且会将其目标拉入攻击距离内。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "坦克"
+    },
+    "200590": {
+      "goop_id": "200590",
+      "title": "连杀",
+      "desc": "每次击杀获得25法力值。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法力值"
+    },
+    "200610": {
+      "goop_id": "200610",
+      "title": "猎头者",
+      "desc": "这个弈子获得15%攻击速度。每击杀1个弈子，这个弈子会永久获得额外的1%(在【狂暴模式】中翻倍)。(总计击杀数：foreverrecord2_200370_200370)",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻速"
+    },
+    "200620": {
+      "goop_id": "200620",
+      "title": "法强吸收",
+      "desc": "获得30法术强度。每当一名友方弈子阵亡时，获得其5%法术强度。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200630": {
+      "goop_id": "200630",
+      "title": "攻击吸收",
+      "desc": "获得30%攻击力。每当一名友方弈子阵亡时，获得其5%攻击力。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200650": {
+      "goop_id": "200650",
+      "title": "火球",
+      "desc": "每花费70法力值，就会投掷一个半径2格的火球，在5秒里造成7%最大生命值的真实伤害和灼烧效果。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200660": {
+      "goop_id": "200660",
+      "title": "贪财化身",
+      "desc": "获得5金币。获得15%伤害增幅，并且你每拥有2金币就会获得1%额外伤害增幅(至多至40)。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "增伤"
+    },
+    "200670": {
+      "goop_id": "200670",
+      "title": "双狼佣兽",
+      "desc": "召唤两头不可被选取的狼，它们拥有0.9的攻击速度和这个弈子45%的攻击力。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "攻击力"
+    },
+    "200680": {
+      "goop_id": "200680",
+      "title": "剔除弱者",
+      "desc": "基于目标的已损失生命值，获得至多100%暴击几率。每3秒，将距离内百分比生命值最低的那个敌人选为目标。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "暴击"
+    },
+    "200710": {
+      "goop_id": "200710",
+      "title": "深入敌阵",
+      "desc": "在第一次施放技能时，跃向多个敌人并在半径2格的区域内造成1.5|1秒晕眩，并获得25%攻速和20%全能吸血。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200720": {
+      "goop_id": "200720",
+      "title": "迷失于未知",
+      "desc": "该弈子消失3回合。当该弈子归来时，该弈子会获得50%法术强度和50%攻击力。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200730": {
+      "goop_id": "200730",
+      "title": "龙魂",
+      "desc": "这个弈子对一个新目标打出的第一次攻击会发射一团龙魂震波，造成20%最大生命值的真实伤害。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "能量"
+    },
+    "200740": {
+      "goop_id": "200740",
+      "title": "绝不浪费",
+      "desc": "当一名友方弈子阵亡时，获得其100%当前法力值。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法力值"
+    },
+    "200760": {
+      "goop_id": "200760",
+      "title": "镭射眼",
+      "desc": "在一个3格长的直线区域内持续造成每秒80%法术强度的魔法伤害并对敌人们施加持续3秒的灼烧。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "法伤"
+    },
+    "200770": {
+      "goop_id": "200770",
+      "title": "终极英雄",
+      "desc": "将1个3星1费弈子升到4星！",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    },
+    "200780": {
+      "goop_id": "200780",
+      "title": "震撼登场",
+      "desc": "战斗开始时：跳离战场。在6秒后，带着70%额外最大生命值登场并对所有敌人造成1.5|1秒晕眩。",
+      "logo": "",
+      "video": "",
+      "bgImage": "https:\/\/game.gtimg.cn\/images\/lol\/act\/jkzlk\/mode13s14\/other\/goop.png",
+      "remark": "",
+      "category": "功能"
+    }
+  }
+}

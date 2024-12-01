@@ -118,6 +118,17 @@ class SunflowerUtils:
 
         return max([(SunflowerUtils.text_similarity(augment_name, augment), augment) for augment in SunflowerUtils.get_augments()])[1]
 
+    @staticmethod
+    def get_evolutions() -> set:
+        """
+        Get the evolutions from the json file.
+        :return:
+        """
+        data = json.load(open(EVOLUTIONS_PATH, encoding='utf-8'))['data']
+
+        return {data[k]['title'] for k in data.keys()}
+
 
 if __name__ == '__main__':
-    print(SunflowerUtils.get_heroes())
+    # print(SunflowerUtils.get_augments())
+    print(SunflowerUtils.get_evolutions())
