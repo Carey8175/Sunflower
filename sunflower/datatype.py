@@ -36,9 +36,9 @@ class SpecificArea:
     ]
 
     AUGMENTS: list[BoundingBox] = [
-        BoundingBox(200, 280, 80, 25),       # augment 1 button
-        BoundingBox(460, 280, 80, 25),       # augment 2 button
-        BoundingBox(730, 280, 80, 25),       # augment 3 button
+        BoundingBox(200, 280, 100, 25),       # augment 1 button
+        BoundingBox(460, 280, 100, 25),       # augment 2 button
+        BoundingBox(730, 280, 100, 25),       # augment 3 button
     ]
 
     BOARD: list[list[BoundingBox]] = [
