@@ -220,3 +220,25 @@ class SunflowerCatcher(AdbOCR):
         # hp = await self.get_hp(game_state)
 
         return BasicGameInfo(coin, level, period=period, store=store)
+
+    async def get_augments(self, game_state: GameState) -> list[str] | None:
+        """
+        Get the augments from the device by ocr.
+        :param game_state:
+        :return:
+        """
+        if game_state != GameState.IN_GAME:
+            logger.warning("The game state is not in game. Cannot get augments.")
+            return None
+
+        augments = []
+        for i in range(3):
+            ocr_results = await self.get_screen_text(SpecificArea.AUGMENTS[i])
+            if not ocr_results:
+                continue
+
+            augments.append(SunflowerUtils.is_augments(ocr_results))
+
+        return augments if augments else None
+
+
