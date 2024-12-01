@@ -2,7 +2,7 @@ import json
 import cv2
 import numpy
 
-from sunflower.config import HEROES_PATH, EQUIPMENTS_PATH
+from sunflower.config import *
 
 
 class SunflowerUtils:
@@ -13,7 +13,7 @@ class SunflowerUtils:
         :param file_path:
         :return:
         """
-        data = json.load(open(file_path))['data']
+        data = json.load(open(file_path, encoding='utf-8'))['data']
 
         return {data[k]['name'] for k in data.keys()}
 
@@ -48,7 +48,7 @@ class SunflowerUtils:
         :param file_path:
         :return:
         """
-        data = json.load(open(file_path))['data']
+        data = json.load(open(file_path, encoding='utf-8'))['data']
 
         return {data[k]['name'] for k in data.keys()}
 
@@ -94,6 +94,29 @@ class SunflowerUtils:
 
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+    @staticmethod
+    def get_augments() -> set:
+        """
+        Get the augments from the json file.
+        :return:
+        """
+        data = json.load(open(AUGMENTS_PATH, encoding='utf-8'))['data']
+
+        return {data[k]['name'] for k in data.keys()}
+
+    @staticmethod
+    def is_augments(ocr_results: list) -> str | None:
+        """
+        After ocr, check if the text has augments.
+        :param ocr_results: the ocr results of current screen
+        :return: the name of the augments
+        """
+        augment_name = ''.join([ocr_result.text for ocr_result in ocr_results])
+        if augment_name in SunflowerUtils.get_augments():
+            return augment_name
+
+        return max([(SunflowerUtils.text_similarity(augment_name, augment), augment) for augment in SunflowerUtils.get_augments()])[1]
 
 
 if __name__ == '__main__':
