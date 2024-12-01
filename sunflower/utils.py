@@ -128,6 +128,19 @@ class SunflowerUtils:
 
         return {data[k]['title'] for k in data.keys()}
 
+    @staticmethod
+    def is_evolution(ocr_results: list) -> str | None:
+        """
+        After ocr, check if the text has evolutions.
+        :param ocr_results: the ocr results of current screen
+        :return: the name of the evolutions
+        """
+        evolution_name = ''.join([ocr_result.text for ocr_result in ocr_results])
+        if evolution_name in SunflowerUtils.get_evolutions():
+            return evolution_name
+
+        return max([(SunflowerUtils.text_similarity(evolution_name, evolution), evolution) for evolution in SunflowerUtils.get_evolutions()])[1]
+
 
 if __name__ == '__main__':
     # print(SunflowerUtils.get_augments())

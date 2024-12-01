@@ -235,10 +235,24 @@ class SunflowerCatcher(AdbOCR):
         for i in range(3):
             ocr_results = await self.get_screen_text(SpecificArea.AUGMENTS[i])
             if not ocr_results:
-                continue
+                augments.append(None)
 
             augments.append(SunflowerUtils.is_augments(ocr_results))
 
         return augments if augments else None
 
+    async def get_evolution(self, game_state: GameState) -> list[str] | None:
+        """
+        Get the evolution from the device by ocr.
+        :param game_state:
+        :return:
+        """
+        if game_state != GameState.IN_GAME:
+            logger.warning("The game state is not in game. Cannot get evolution.")
+            return None
+
+        ocr_results = await self.get_screen_text(SpecificArea.EVOLVE)
+        evolution = SunflowerUtils.is_evolution(ocr_results)
+
+        return evolution
 
