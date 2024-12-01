@@ -36,9 +36,9 @@ class SpecificArea:
     ]
 
     AUGMENTS: list[BoundingBox] = [
-        BoundingBox(210, 280, 70, 25),       # augment 1 button
-        BoundingBox(470, 280, 70, 25),       # augment 2 button
-        BoundingBox(740, 280, 70, 25),       # augment 3 button
+        BoundingBox(200, 280, 80, 25),       # augment 1 button
+        BoundingBox(460, 280, 80, 25),       # augment 2 button
+        BoundingBox(730, 280, 80, 25),       # augment 3 button
     ]
 
     BOARD: list[list[BoundingBox]] = [
@@ -52,9 +52,14 @@ class SpecificArea:
         BoundingBox(205 + i * 72, 490, 40, 40) for i in range(9)
     ]
 
-    CHESS_PRICE: BoundingBox = BoundingBox(840, 100, 50, 20)
+    CHESS_PRICE: BoundingBox = BoundingBox(850, 100, 50, 20)
     CHESS_NAME: BoundingBox = BoundingBox(830, 75, 120, 25)
     CIRCLE_PLACE = BoundingBox(510, 425, 10, 10)
+    CHESS_STAR = BoundingBox(860, 40, 70, 30)
+
+    CHESS_EQUIPMENTS: list[BoundingBox] = [
+        BoundingBox(790 + i*80, 410, 50, 50) for i in range(3)
+    ]
 
 
 class SpecificButton:
@@ -80,9 +85,9 @@ class SpecificButton:
     CHESS_SELL = BoundingBox(830, 480, 120, 30)       # chess sell button
 
     ROLL_AUGMENTS: list[BoundingBox] = [
-        BoundingBox(207, 468, 75, 30),       # roll augment 1 button
-        BoundingBox(475, 468, 75, 30),       # roll augment 2 button
-        BoundingBox(740, 468, 75, 30),       # roll augment 3 button
+        BoundingBox(207, 468, 90, 30),       # roll augment 1 button
+        BoundingBox(475, 468, 90, 30),       # roll augment 2 button
+        BoundingBox(740, 468, 90, 30),       # roll augment 3 button
     ]
 
     STORE_HERO: list[BoundingBox] = [
@@ -123,3 +128,11 @@ class BasicGameInfo:
     period: tuple
     store: list[str]
 
+
+@dataclass
+class Chess:
+    name: str
+    star: int
+    location: tuple
+    is_candidate: bool
+    equipments: list[str | None]
