@@ -271,9 +271,48 @@ class AdbOCR:
         # crop screen according to detect_area
         if detect_area:
             screen = screen[detect_area.y:detect_area.y + detect_area.height,
-                            detect_area.x:detect_area.x + detect_area.width]
+                     detect_area.x:detect_area.x + detect_area.width]
 
         if not (result := self.ocr_engine.ocr(screen, cls=False)):
+            logger.debug("No text was found on the screen.")
+            return None
+
+        ocr_results: list[OcrResult] = []
+
+        if not (result := result[0]):
+            logger.debug("No text was found on the screen.")
+            return None
+
+        for res in result:
+            ocr_results.append(OcrResult(
+                x=res[0][0][0] if not detect_area else detect_area.x + res[0][0][0],
+                y=res[0][0][1] if not detect_area else detect_area.y + res[0][0][1],
+                width=res[0][2][0] - res[0][0][0],
+                height=res[0][2][1] - res[0][0][1],
+                text=res[1][0]
+            )) if res[1][1] > confidence else None
+
+        return ocr_results if ocr_results else None
+
+    async def get_image_text(self, image: numpy.ndarray, detect_area: BoundingBox | None = None, confidence=0.85) -> \
+    list[OcrResult] | None:
+        """
+        Get the text on the image.
+
+        Args:
+            image: The image to detect text in.
+            detect_area: The area to detect text in.
+            confidence: The confidence level to use when detecting text. Defaults to 0.85.
+
+        Returns:
+            The text on the screen.
+        """
+        # crop screen according to detect_area
+        if detect_area:
+            image = image[detect_area.y:detect_area.y + detect_area.height,
+                    detect_area.x:detect_area.x + detect_area.width]
+
+        if not (result := self.ocr_engine.ocr(image, cls=False)):
             logger.debug("No text was found on the screen.")
             return None
 
