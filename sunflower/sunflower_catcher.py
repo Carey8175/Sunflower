@@ -3,7 +3,7 @@ from numpy import ndarray
 from loguru import logger
 from sunflower.adb import AdbOCR, BoundingBox
 from sunflower.utils import SunflowerUtils
-from sunflower.datatype import GameState, SpecificArea, SpecificButton, BasicGameInfo
+from sunflower.datatype import GameState, SpecificArea, SpecificButton, BasicGameInfo, Chess
 
 
 class SunflowerCatcher(AdbOCR):
@@ -160,7 +160,7 @@ class SunflowerCatcher(AdbOCR):
 
         return equipments if equipments else None
 
-    async def get_equipment_name(self, game_state: GameState) -> str | None:
+    async def get_equipment_name(self, game_state: GameState, left=True) -> str | None:
         """
         Get the equipment from the device by ocr.
         :return:
@@ -169,7 +169,7 @@ class SunflowerCatcher(AdbOCR):
             logger.warning("The game state is not in game. Cannot get equipment.")
             return None
 
-        ocr_results = await self.get_screen_text(BoundingBox(0, 0, 514, 360))
+        ocr_results = await self.get_screen_text(BoundingBox(0 if left else 512, 0, 512, 360))
         # save the real equipment results
         equipment_results = [r for r in ocr_results if r.text in SunflowerUtils.get_equipments()]
 
@@ -236,6 +236,7 @@ class SunflowerCatcher(AdbOCR):
             ocr_results = await self.get_screen_text(SpecificArea.AUGMENTS[i])
             if not ocr_results:
                 augments.append(None)
+                continue
 
             augments.append(SunflowerUtils.is_augments(ocr_results))
 
@@ -256,3 +257,46 @@ class SunflowerCatcher(AdbOCR):
 
         return evolution
 
+    async def get_chess_info(
+            self,
+            game_state: GameState,
+            location: tuple,
+            check_equipment: bool = False
+    ) -> Chess | list[Chess] | None:
+        """
+        Get the board information from the device by ocr.
+        Args:
+            game_state:
+            location:
+            check_equipment: whether to check the equipment of the chess
+        :return:
+        """
+        if game_state != GameState.IN_GAME:
+            logger.warning("The game state is not in game. Cannot get board information.")
+            return None
+
+        await self.click(*SpecificArea.BOARD[location[0]][location[1]].get_middle_coordinate())
+        await asyncio.sleep(0.5)
+
+        ocr_results = await self.get_screen_text(SpecificArea.CHESS_NAME)
+        chess_name = SunflowerUtils.is_hero(ocr_results)
+
+        # get chess star
+        chess_star = await SunflowerUtils.get_chess_star(await self.get_screen_box(SpecificArea.CHESS_STAR))
+
+        chess_equipments = []
+        if check_equipment:
+            for i in range(3):
+                await self.click(*SpecificArea.CHESS_EQUIPMENTS[i].get_middle_coordinate())
+                await asyncio.sleep(0.5)
+
+                equipment_name = await self.get_equipment_name(game_state, left=False)
+
+                if not equipment_name:
+                    break
+
+                chess_equipments.append(equipment_name)
+
+        chess_equipments.extend([None] * (3 - len(chess_equipments)))
+
+        return Chess(chess_name, chess_star, location, False, chess_equipments)

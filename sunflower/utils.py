@@ -112,6 +112,9 @@ class SunflowerUtils:
         :param ocr_results: the ocr results of current screen
         :return: the name of the augments
         """
+        if not ocr_results:
+            return None
+
         augment_name = ''.join([ocr_result.text for ocr_result in ocr_results])
         if augment_name in SunflowerUtils.get_augments():
             return augment_name
@@ -140,6 +143,38 @@ class SunflowerUtils:
             return evolution_name
 
         return max([(SunflowerUtils.text_similarity(evolution_name, evolution), evolution) for evolution in SunflowerUtils.get_evolutions()])[1]
+
+    @staticmethod
+    async def count_template_matches(template, image, threshold=0.8):
+        """
+        count the number of template matches in an image
+        """
+        template_height, template_width = template.shape[:2]
+
+        result = cv2.matchTemplate(image, template, cv2.TM_CCOEFF_NORMED)
+
+        locations = numpy.where(result >= threshold)
+        locations = list(zip(*locations[::-1]))  # 将位置转换为(x, y)格式
+
+        matches = []
+        for loc in locations:
+            match = True
+            for match_loc in matches:
+                if abs(loc[0] - match_loc[0]) < template_width and abs(loc[1] - match_loc[1]) < template_height:
+                    match = False
+                    break
+            if match:
+                matches.append(loc)
+
+        return len(matches)
+
+    @staticmethod
+    async def get_chess_star(image, threshold=0.8):
+        """
+        get the chess star from the image
+        """
+        template = cv2.imread(os.path.join(IMAGE_PATH, 'chess_star.jpg'), cv2.IMREAD_GRAYSCALE)
+        return await SunflowerUtils.count_template_matches(template, image, threshold)
 
 
 if __name__ == '__main__':
