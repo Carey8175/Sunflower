@@ -170,7 +170,7 @@ class SunflowerCatcher(AdbOCR):
             logger.warning("The game state is not in game. Cannot get equipment.")
             return None
 
-        ocr_results = await self.get_screen_text(BoundingBox(0 if left else 512, 0, 512, 360))
+        ocr_results = await self.get_screen_text(BoundingBox(0 if left else 512, 0, 512, 500))
         # save the real equipment results
         equipment_results = [r for r in ocr_results if r.text in SunflowerUtils.get_equipments()]
 
