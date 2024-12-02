@@ -29,6 +29,7 @@ class SpecificArea:
     COIN = BoundingBox(490, 550, 60, 30)
     LEVEL = BoundingBox(70, 550, 60, 30)
     EVOLVE = BoundingBox(240, 600, 250, 30)
+    CIRCLE = BoundingBox(500, 410, 10, 10)
 
     # PLAYERS = BoundingBox(850, 50, 150, 440)
     PLAYERS: list[BoundingBox] = [
@@ -43,9 +44,9 @@ class SpecificArea:
 
     BOARD: list[list[BoundingBox]] = [
         [BoundingBox(290 + i*65, 265, 50, 25) for i in range(7)],
-        [BoundingBox(310 + i*65, 310, 50, 25) for i in range(7)],
-        [BoundingBox(270 + i*70, 355, 50, 25) for i in range(7)],
-        [BoundingBox(295 + i*77, 405, 50, 25) for i in range(7)],
+        [BoundingBox(320 + i*65, 310, 50, 25) for i in range(7)],
+        [BoundingBox(275 + i*70, 355, 50, 25) for i in range(7)],
+        [BoundingBox(300 + i*77, 405, 50, 25) for i in range(7)],
     ]
 
     CANDIDATES: list[BoundingBox] = [
@@ -84,6 +85,7 @@ class SpecificButton:
     ROLL = BoundingBox(80, 655, 130, 50)       # roll button
     CHOOSE_HP = BoundingBox(950, 480, 50, 50)       # choose hp button
     CHESS_SELL = BoundingBox(830, 480, 120, 30)       # chess sell button
+    SETTING_IN_GAME = BoundingBox(970, 0, 50, 50)       # setting button, up left corner
 
     ROLL_AUGMENTS: list[BoundingBox] = [
         BoundingBox(207, 468, 90, 30),       # roll augment 1 button
