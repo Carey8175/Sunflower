@@ -15,3 +15,12 @@ Some game settings
 """
 # the interval after each operation, note: the smaller the value, the faster the operation, but with a higher risk
 INTERVAL = 0.3
+
+# the special items in candidates
+SPECIAL_CANDIDATES = {
+    "基础装备锻造器",
+    "成装锻造器",
+    "神器锻造器",
+    "辅助装备锻造器",
+    "金蛋"
+}
