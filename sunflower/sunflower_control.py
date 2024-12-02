@@ -69,7 +69,7 @@ class InGame:
         else:
             target = SpecificArea.CANDIDATES[target[0]].get_middle_coordinate()
 
-        await app.swipe(*location, *target, duration=400)
+        await app.swipe(*location, *target, duration=600)
 
     @staticmethod
     async def roll_augment(app: AdbOCR, index: int):
@@ -82,6 +82,20 @@ class InGame:
     @staticmethod
     async def buy_chess(app: AdbOCR, index: int):
         await app.click(*SpecificButton.STORE_HERO[index].get_middle_coordinate())
+
+    @staticmethod
+    async def evolve(app: AdbOCR):
+        await app.click(*SpecificButton.EVOLVE.get_middle_coordinate())
+
+    @staticmethod
+    async def roll_evolve(app: AdbOCR):
+        await app.click(*SpecificButton.EVOLVE_ROLL.get_middle_coordinate())
+
+    @staticmethod
+    async def move_to_circle(app: AdbOCR):
+        await app.click(x=500, y=500)
+        await asyncio.sleep(INTERVAL)
+        await app.click(*SpecificArea.CIRCLE.get_middle_coordinate())
 
 
 class ResultMenu:
