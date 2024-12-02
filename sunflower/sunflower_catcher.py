@@ -3,7 +3,7 @@ from numpy import ndarray
 from loguru import logger
 from sunflower.adb import AdbOCR, BoundingBox
 from sunflower.utils import SunflowerUtils
-from sunflower.config import INTERVAL
+from sunflower.config import INTERVAL, SPECIAL_CANDIDATES
 from sunflower.datatype import GameState, SpecificArea, SpecificButton, BasicGameInfo, Chess
 
 
@@ -313,11 +313,13 @@ class SunflowerCatcher(AdbOCR):
 
         return Chess(chess_name, chess_star, location, False, chess_equipments)
 
-    async def get_candidate_info(self, game_state: GameState, order: int) -> Chess | None:
+    async def get_candidate_info(self, game_state: GameState, order: int, check_equipment: bool = False) -> Chess | None:
         """
         Get the candidate information from the device by ocr.
-        :param game_state:
-        :param order:
+        Args:
+            game_state:
+            order:
+            check_equipment: whether to check the equipment of the chess
         :return:
         """
         if game_state != GameState.IN_GAME:
@@ -327,9 +329,40 @@ class SunflowerCatcher(AdbOCR):
         await self.click(*SpecificArea.CANDIDATES[order].get_middle_coordinate())
         await asyncio.sleep(INTERVAL)
 
-        ocr_results = await self.get_screen_text(SpecificArea.CHESS_NAME)
-        chess_name = SunflowerUtils.is_hero(ocr_results)
+        # determine the chess is special tool or not
+        all_screen_text = await self.get_screen_text(BoundingBox(0, 300, 1024, 500))
+        all_screen_text = {text.text for text in all_screen_text}
+
+        if special_candidate := SPECIAL_CANDIDATES & all_screen_text:
+            return Chess(special_candidate.pop(), 0, (order, ), True, [None, None, None])
+
+        chess_name_task = asyncio.create_task(self.get_image_text(await self.get_screen_box(SpecificArea.CHESS_NAME)))
 
         # get chess star
-        chess_star = await SunflowerUtils.get_chess_star(await self.get_screen_box(SpecificArea.CHESS_STAR))
+        chess_star_task = asyncio.create_task(
+            SunflowerUtils.get_chess_star(await self.get_screen_box(SpecificArea.CHESS_STAR)))
+        # chess_star = await SunflowerUtils.get_chess_star(await self.get_screen_box(SpecificArea.CHESS_STAR))
+
+        chess_equipments = []
+        if check_equipment:
+            for i in range(3):
+                await self.click(*SpecificArea.CHESS_EQUIPMENTS[i].get_middle_coordinate())
+                await asyncio.sleep(INTERVAL)
+
+                equipment_name = await self.get_equipment_name(game_state, left=False)
+
+                if not equipment_name:
+                    break
+
+                chess_equipments.append(equipment_name)
+
+        chess_equipments.extend([None] * (3 - len(chess_equipments)))
+
+        # get async results
+        await chess_name_task, chess_star_task
+
+        chess_name = SunflowerUtils.is_hero(chess_name_task.result())
+        chess_star = chess_star_task.result()
+
+        return Chess(chess_name, chess_star, (order, ), True, chess_equipments)
 
