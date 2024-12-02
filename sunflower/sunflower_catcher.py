@@ -367,3 +367,36 @@ class SunflowerCatcher(AdbOCR):
 
         return Chess(chess_name, chess_star, (order, ), True, chess_equipments)
 
+    async def get_game_state(self) -> GameState | None:
+        """
+        Get the game state from the device by ocr.
+        :return:
+        """
+        ocr_results = await self.get_screen_text()
+        ocr_results_text = {text.text for text in ocr_results}
+
+        # main menu
+        evidence = {'商城', '事件', '魔典'}
+        if evidence & ocr_results_text:
+            return GameState.MAIN_MENU
+
+        # mode choice
+        evidence = {'排位赛', '匹配对战', '限时模式'}
+        if evidence & ocr_results_text:
+            return GameState.MODE_CHOOSE_MENU
+
+        # room
+        evidence = {'房间语音', '战备', '招募', '对局已找到'}
+        if evidence & ocr_results_text:
+            return GameState.ROOM
+
+        # in game
+        evidence = {'备战环节', '购买经验', '刷新', '战斗环节'}
+        if evidence & ocr_results_text:
+            return GameState.IN_GAME
+
+        # result
+        evidence = {'您获得了', '第一名', '第二名', '第三名', '第四名'
+                    '第五名', '第六名', '第七名', '第八名'}
+        if evidence & ocr_results_text:
+            return GameState.RESULT_MENU
