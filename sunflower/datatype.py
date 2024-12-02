@@ -15,6 +15,8 @@ class GameState(StrEnum):
     ROOM = auto()
     # in the game
     IN_GAME = auto()
+    # in the result menu
+    RESULT_MENU = auto()
 
 
 class SpecificArea:

@@ -24,3 +24,14 @@ SPECIAL_CANDIDATES = {
     "辅助装备锻造器",
     "金蛋"
 }
+
+# the adb host and port
+ADB_HOST = "localhost"
+ADB_PORT = 16384
+
+# the screen resolution
+SCREEN_RESOLUTION = (1024, 720)
+SCREEN_DPI = 240
+frame_rate = 30
+GAME_RESOLUTION = "标清"
+IMAGE_QUALITY = "中"
