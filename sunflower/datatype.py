@@ -69,6 +69,7 @@ class SpecificButton:
     # main menu ---------------------------------------------------------------
     PROFILE = BoundingBox(5, 630, 70, 70)      # profile button, down left corner
     START_MAIN = BoundingBox(880, 560, 150, 150)       # start button, down right corner
+    SETTING_MAIN = BoundingBox(960, 20, 20, 20)       # setting button, up left corner
 
     # mode choose menu --------------------------------------------------------
     START_MODE = BoundingBox(820, 640, 195, 70)       # start button, down right corner
