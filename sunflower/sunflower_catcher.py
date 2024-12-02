@@ -214,11 +214,12 @@ class SunflowerCatcher(AdbOCR):
             logger.warning("The game state is not in game. Cannot get basic game information.")
             return None
 
-        coin = await self.get_coin(game_state)
-        level = await self.get_level(game_state)
-        period = await self.get_period(game_state)
-        store = await self.get_store(game_state)
-        # hp = await self.get_hp(game_state)
+        coin, level, period, store = await asyncio.gather(
+            self.get_coin(game_state),
+            self.get_level(game_state),
+            self.get_period(game_state),
+            self.get_store(game_state)
+        )
 
         return BasicGameInfo(coin, level, period=period, store=store)
 
